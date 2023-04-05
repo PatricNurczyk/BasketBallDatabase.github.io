@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
@@ -7,7 +7,6 @@ app.config['MYSQL_USER'] = 'webapp'
 app.config['MYSQL_PASSWORD'] = 'webapp'
 app.config['MYSQL_DB'] = 'baskeball_database'
 mysql = MySQL(app)
-
 
 
 @app.route('/', methods=['GET'])
