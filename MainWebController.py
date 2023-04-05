@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'webapp'
 app.config['MYSQL_PASSWORD'] = 'webapp'
-app.config['MYSQL_DB'] = 'flask'
+app.config['MYSQL_DB'] = 'baskeball_database'
 mysql = MySQL(app)
 
 
@@ -19,9 +19,9 @@ def home():
 def test():
     cursor = mysql.connection.cursor()
     cursor.execute("SELECT * FROM useraccounts")
-    rv =  cursor.fetchall()
+    data = cursor.fetchall()
     cursor.close()
-    return rv
+    return render_template('test.html', data=data)
 
 
 if __name__ == '__main__':
