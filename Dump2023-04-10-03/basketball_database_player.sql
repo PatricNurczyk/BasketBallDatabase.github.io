@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
 --
--- Host: localhost    Database: baskeball_database
+-- Host: 127.0.0.1    Database: basketball_database
 -- ------------------------------------------------------
 -- Server version	8.0.32
 
@@ -33,7 +33,7 @@ CREATE TABLE `player` (
   PRIMARY KEY (`Player_ID`),
   KEY `Team_ID` (`Team_ID`),
   CONSTRAINT `player_ibfk_1` FOREIGN KEY (`Team_ID`) REFERENCES `team` (`Team_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `player` (
 
 LOCK TABLES `player` WRITE;
 /*!40000 ALTER TABLE `player` DISABLE KEYS */;
-INSERT INTO `player` VALUES (1,'Sola Adebisi',51,1,78.0,190.0,3);
+INSERT INTO `player` VALUES (1,'Sola Adebisi',51,1,78.0,190.0,3),(2,'Sola Adebisi',51,1,78.0,190.0,3),(3,'Sola Adebisi',51,1,78.0,190.0,3),(4,'Jeremiah Bembry',10,1,78.0,185.0,1),(5,'Michael Brown',45,1,79.0,220.0,2),(6,'Matthew Cleveland',35,1,79.0,200.0,2),(7,'Cam Ron Corhen',3,1,82.0,225.0,1),(8,'Ron Fletcher',21,1,79.0,215.0,3),(9,'Jaylan Gainey',33,1,82.0,220.0,4),(10,'DeAnte Green',5,1,82.0,210.0,1),(11,'Darin Green Jr.',22,1,77.0,195.0,3),(12,'Tom House',12,1,79.0,200.0,1),(13,'Chandler Jackson',0,1,77.0,215.0,1),(14,'Naheem McLeod',24,1,88.0,255.0,2),(15,'Baba Miller',11,1,83.0,204.0,1),(16,'Caleb Mills',4,1,77.0,180.0,3),(17,'R.J. Morris',41,1,75.0,185.0,1),(18,'Tibor Palinkas',43,1,76.0,190.0,3),(19,'Isaac Spainhour',40,1,75.0,180.0,2);
 /*!40000 ALTER TABLE `player` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-10 15:45:31
+-- Dump completed on 2023-04-10 16:05:10

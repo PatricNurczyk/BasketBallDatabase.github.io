@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
 --
--- Host: localhost    Database: baskeball_database
+-- Host: 127.0.0.1    Database: basketball_database
 -- ------------------------------------------------------
 -- Server version	8.0.32
 
@@ -16,29 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `contains_player`
+-- Table structure for table `useraccounts`
 --
 
-DROP TABLE IF EXISTS `contains_player`;
+DROP TABLE IF EXISTS `useraccounts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `contains_player` (
-  `Team_Name` varchar(64) NOT NULL,
-  `Player_ID` int NOT NULL,
-  PRIMARY KEY (`Team_Name`,`Player_ID`),
-  KEY `Player_ID` (`Player_ID`),
-  CONSTRAINT `contains_player_ibfk_1` FOREIGN KEY (`Team_Name`) REFERENCES `custom_starter` (`Team_Name`),
-  CONSTRAINT `contains_player_ibfk_2` FOREIGN KEY (`Player_ID`) REFERENCES `player` (`Player_ID`)
+CREATE TABLE `useraccounts` (
+  `UserName` varchar(64) NOT NULL,
+  `Password` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`UserName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `contains_player`
+-- Dumping data for table `useraccounts`
 --
 
-LOCK TABLES `contains_player` WRITE;
-/*!40000 ALTER TABLE `contains_player` DISABLE KEYS */;
-/*!40000 ALTER TABLE `contains_player` ENABLE KEYS */;
+LOCK TABLES `useraccounts` WRITE;
+/*!40000 ALTER TABLE `useraccounts` DISABLE KEYS */;
+INSERT INTO `useraccounts` VALUES ('admin','password');
+/*!40000 ALTER TABLE `useraccounts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-10 15:45:31
+-- Dump completed on 2023-04-10 16:05:10
