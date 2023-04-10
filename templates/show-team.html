@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team Information</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>School</th>
+                <th>Mascot</th>
+                <th>Wins</th>
+                <th>Losses</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td><a href="/players?id={{ row[0] }}">View Players</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <hr>
+    <a href="/">Return to HomePage</a>
+</body>
+</html>

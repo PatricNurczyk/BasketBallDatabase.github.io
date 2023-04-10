@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
@@ -21,6 +21,23 @@ def test():
     data = cursor.fetchall()
     cursor.close()
     return render_template('test.html', data=data)
+
+@app.route('/teams', methods=['GET'])
+def showTeams():
+    cursor = mysql.connection.cursor()
+    cursor.execute("SELECT * FROM team")
+    data = cursor.fetchall()
+    cursor.close()
+    return render_template('show-team.html', data=data)
+
+@app.route('/players', methods=['GET'])
+def showPlayers():
+    teamID = request.args.get('id', default=1, type=int)
+    cursor = mysql.connection.cursor()
+    cursor.execute("SELECT * FROM player WHERE Team_ID = 6")
+    data = cursor.fetchall()
+    cursor.close()
+    return render_template('show-player.html', data=data)
 
 
 if __name__ == '__main__':
