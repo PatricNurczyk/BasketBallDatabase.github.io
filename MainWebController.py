@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'webapp'
 app.config['MYSQL_PASSWORD'] = 'webapp'
-app.config['MYSQL_DB'] = 'baskeball_database'
+app.config['MYSQL_DB'] = 'basketball_database'
 mysql = MySQL(app)
 
 
@@ -34,7 +34,7 @@ def showTeams():
 def showPlayers():
     teamID = request.args.get('id', default=1, type=int)
     cursor = mysql.connection.cursor()
-    cursor.execute("SELECT * FROM player WHERE Team_ID = 6")
+    cursor.execute("SELECT * FROM player WHERE Team_ID = 1")
     data = cursor.fetchall()
     cursor.close()
     return render_template('show-player.html', data=data)
