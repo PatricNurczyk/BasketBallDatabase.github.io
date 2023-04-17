@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Team Information</title>
+    <title>Player Information</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='styling/index.css') }}">
 </head>
 <body>
+<h1>BasketBall Database</h1>
+    <hr>
+    <div class="span">
+        <form method="POST" id="search">
+            <label for="type">Search By:</label>
+            <select name="type" id="type">
+              <option value="name">Name</option>
+              <option value="p-num">Player Number</option>
+              <option value="height">Height</option>
+              <option value="weight">Weight</option>
+                <option value="year">Year In School</option>
+            </select>
+            <input type="text" name="query" placeholder="Enter Search Here">
+            <button type="submit">Search</button>
+        </form>
+        <button onclick="location.href='/players'">Refresh Page</button>
+    </div>
+    <hr>
     <table>
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Player Number</th>
-                <th>Height</th>
-                <th>Weight</th>
-                <th>Year In School</th>
+                <th><a href="/average?type=Height&id={{ data[0][3] }}">Height</a></th>
+                <th><a href="/average?type=Weight&id={{ data[0][3] }}">Weight</a></th>
+                <th><a href="/average?type=Year_In_School&id={{ data[0][3] }}">Year In School</a></th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +42,7 @@
                     <td>{{ row[4] }}</td>
                     <td>{{ row[5] }}</td>
                     <td>{{ row[6] }}</td>
+                    <td><a href="/moreinfo?id={{ row[0] }}">More Info</a></td>
                 </tr>
             {% endfor %}
         </tbody>

@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My App</title>
+    <title>Average</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='styling/index.css') }}">
 </head>
 <body>
+<h1>BasketBall Database</h1>
+    <hr>
     <table>
         <thead>
             <tr>
-                <th>UserName</th>
-                <th>Password</th>
+                <th>Average</th>
             </tr>
         </thead>
         <tbody>
             {% for row in data %}
                 <tr>
                     <td>{{ row[0] }}</td>
-                    <td>{{ row[1] }}</td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
+    <hr>
+    <a href="/players">Return to Players</a>
 </body>
 </html>

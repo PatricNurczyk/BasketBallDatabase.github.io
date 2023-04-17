@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Player Information</title>
+    <title>Team Information</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='styling/index.css') }}">
 </head>
 <body>
-    <table>
-        <thead>
+    <h1>BasketBall Database</h1>
+    <hr>
+    <div class="span">
+        <form method="POST">
+            <label for="type">Search By:</label>
+            <select name="type" id="type">
+              <option value="School">School</option>
+              <option value="Mascot">Mascot</option>
+              <option value="Wins">Wins</option>
+              <option value="Loss">Losses</option>
+            </select>
+            <input type="text" name="query" placeholder="Enter Search Here">
+            <button type="submit">Search</button>
+        </form>
+        <button onclick="location.href='/teams'">Refresh Page</button>
+    </div>
+    <hr>
+        <div class="table-container">
+            <table>
+            <thead>
             <tr>
                 <th>School</th>
                 <th>Mascot</th>
                 <th>Wins</th>
                 <th>Losses</th>
+                <th># of Players</th>
                 <th>Action</th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             {% for row in data %}
                 <tr>
+                    <td>{{ row[0] }}</td>
                     <td>{{ row[1] }}</td>
                     <td>{{ row[2] }}</td>
                     <td>{{ row[3] }}</td>
@@ -25,8 +45,9 @@
                     <td><a href="/players?id={{ row[0] }}">View Players</a></td>
                 </tr>
             {% endfor %}
-        </tbody>
-    </table>
+            </tbody>
+            </table>
+    </div>
     <hr>
     <a href="/">Return to Home Page</a>
 </body>
