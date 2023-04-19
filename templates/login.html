@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <style>
+        .error{
+            color: red;
+    </style>
 </head>
 <body>
     <h1>Login Page</h1>
+    <h3 class="error">{{ msg }}</h3>
     <form method="POST" id="login">
         <input type="text" name="username" placeholder="Username">
         <input type="text" name="password" placeholder="Password">

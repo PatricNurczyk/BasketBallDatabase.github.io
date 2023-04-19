@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Player</title>
+</head>
+<body>
+    <h1>Add Player</h1>
+    <form method="POST">
+      <input type="text" name="PlayerName" placeholder="Player Name">
+        <br>
+        <input type="text" name="Number" placeholder="Player Number">
+        <select name="School" id="school">
+            {% for row in list %}
+            <option value="{{ row[0] }}">{{ row[1] }}</option>
+            {% endfor %}
+        </select>
+        <br>
+      <input type="text" name="Height" placeholder="Height">
+      <br>
+      <input type="text" name="Weight" placeholder="Weight">
+      <br>
+      <input type="text" name="Year" placeholder="Year In School">
+      <br>
+      <button type="submit">Add Team</button>
+    </form>
+</body>
+</html>
