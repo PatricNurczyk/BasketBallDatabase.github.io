@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My App</title>
+    <title>Accounts and Teams</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='styling/index.css') }}">
 </head>
 <body>
+    <h1>Accounts</h1>
     <table>
         <thead>
             <tr>
@@ -17,6 +18,27 @@
                 <tr>
                     <td>{{ row[0] }}</td>
                     <td>{{ row[1] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <hr>
+    <h1>Custom Teams Ranking</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>UserName</th>
+                <th>TeamName</th>
+                <th>Ranking</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in team %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
                 </tr>
             {% endfor %}
         </tbody>

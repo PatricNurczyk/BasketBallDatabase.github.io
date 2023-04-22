@@ -1,6 +1,8 @@
+CREATE DATABASE  IF NOT EXISTS `basketball_database` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `basketball_database`;
 -- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: basketball_database
+-- Host: localhost    Database: basketball_database
 -- ------------------------------------------------------
 -- Server version	8.0.32
 
@@ -16,27 +18,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `useraccounts`
+-- Table structure for table `custom_starter`
 --
 
-DROP TABLE IF EXISTS `useraccounts`;
+DROP TABLE IF EXISTS `custom_starter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `useraccounts` (
+CREATE TABLE `custom_starter` (
+  `Team_Name` varchar(64) NOT NULL,
   `UserName` varchar(64) NOT NULL,
-  `Password` varchar(64) DEFAULT NULL,
-  PRIMARY KEY (`UserName`)
+  `Ranking` int DEFAULT NULL,
+  PRIMARY KEY (`Team_Name`,`UserName`),
+  KEY `UserName` (`UserName`),
+  CONSTRAINT `custom_starter_ibfk_1` FOREIGN KEY (`UserName`) REFERENCES `useraccounts` (`UserName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `useraccounts`
+-- Dumping data for table `custom_starter`
 --
 
-LOCK TABLES `useraccounts` WRITE;
-/*!40000 ALTER TABLE `useraccounts` DISABLE KEYS */;
-INSERT INTO `useraccounts` VALUES ('admin','password');
-/*!40000 ALTER TABLE `useraccounts` ENABLE KEYS */;
+LOCK TABLES `custom_starter` WRITE;
+/*!40000 ALTER TABLE `custom_starter` DISABLE KEYS */;
+INSERT INTO `custom_starter` VALUES ('PattyTeam','Patric.Nurczyk21',1),('SuperCoolTeam','BBallFan',2);
+/*!40000 ALTER TABLE `custom_starter` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-10 16:05:10
+-- Dump completed on 2023-04-22 13:49:23

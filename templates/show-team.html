@@ -30,18 +30,27 @@
                 <th>Mascot</th>
                 <th>Wins</th>
                 <th>Losses</th>
+                <th>Win/Loss Ratio</th>
+                <th><a href="/orderTeams">Ranking</a></th>
                 <th># of Players</th>
                 <th>Action</th>
             </tr>
             </thead>
             <tbody>
             {% for row in data %}
+            {% if row[4] != 0 %}
+            {% set ratio = row[3] / row[4] %}
+            {% else %}
+            {% set ratio = row[3] %}
+            {% endif %}
                 <tr>
-                    <td>{{ row[0] }}</td>
                     <td>{{ row[1] }}</td>
                     <td>{{ row[2] }}</td>
                     <td>{{ row[3] }}</td>
                     <td>{{ row[4] }}</td>
+                    <td>{{'%0.2f'| format(ratio|float)}}</td>
+                    <td>{{ row[5] }}</td>
+                    <td>{{ row[6] }}</td>
                     <td><a href="/players?id={{ row[0] }}">View Players</a></td>
                 </tr>
             {% endfor %}
@@ -50,9 +59,11 @@
     </div>
     <hr>
     <a href="/">Return to Home Page</a>
-    <br>
+    <hr>
     <a href="/addTeam">Add Team(ADMIN ONLY)</a>
     <br>
     <a href="/addPlayer">Add Player(ADMIN ONLY</a>
+    <br>
+    <a href="/updateStats">Record a Game(ADMIN ONLY)</a>
 </body>
 </html>

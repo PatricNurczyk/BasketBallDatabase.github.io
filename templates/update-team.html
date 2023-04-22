@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Team</title>
+</head>
+<body>
+<h1>Record a Game</h1>
+<h2>{{msg}}</h2>
+<form method="POST">
+    <label for="win">Winner:</label>
+    <select name="Winner" id="win">
+            {% for row in list %}
+            <option value="{{ row[0] }}">{{ row[1] }}</option>
+            {% endfor %}
+            <option value="-1">Other Team</option>
+    </select>
+    <label for="loose">Looser:</label>
+    <select name="Looser" id="loose">
+            {% for row in list %}
+            <option value="{{ row[0] }}">{{ row[1] }}</option>
+            {% endfor %}
+            <option value="-1">Other Team</option>
+    </select>
+    <button type="submit">Record The Game</button>
+</form>
+
+</body>
+</html>

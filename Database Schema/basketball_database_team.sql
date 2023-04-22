@@ -1,6 +1,8 @@
+CREATE DATABASE  IF NOT EXISTS `basketball_database` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `basketball_database`;
 -- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: basketball_database
+-- Host: localhost    Database: basketball_database
 -- ------------------------------------------------------
 -- Server version	8.0.32
 
@@ -39,7 +41,7 @@ CREATE TABLE `team` (
 
 LOCK TABLES `team` WRITE;
 /*!40000 ALTER TABLE `team` DISABLE KEYS */;
-INSERT INTO `team` VALUES (1,'Florida State University','Seminole',0,0,NULL),(2,'University of Florida','Gator',0,0,NULL),(3,'University of North Florida','Osprey',0,0,NULL),(4,'University of South Florida','Bull',0,0,NULL),(5,'University of Central Florida','Knights',0,0,NULL),(6,'University of Miami','Ibis',0,0,NULL),(7,'Florida Agricurltural and Mechanical University','Rattlesnake',0,0,NULL),(8,'Bethune–Cookman University','Wildcat',0,0,NULL),(9,'Florida Internation University','Panther',0,0,NULL),(10,'Florida Gulf Coast University','Eagle',0,0,NULL),(11,'Florida Atlantic University','Owl',0,0,NULL),(12,'Jacksonville University','Dolphin',0,0,NULL),(13,'Stetson University','Hatter',0,0,NULL);
+INSERT INTO `team` VALUES (1,'Florida State University','Seminole',9,23,12),(2,'University of Florida','Gator',16,17,6),(3,'University of North Florida','Osprey',14,17,7),(4,'University of South Florida','Bull',14,18,9),(5,'University of Central Florida','Knights',19,15,3),(6,'University of Miami','Ibis',29,8,2),(7,'Florida Agricurltural and Mechanical University','Rattlesnake',7,22,13),(8,'Bethune–Cookman University','Wildcat',12,20,11),(9,'Florida Internation University','Panther',14,18,9),(10,'Florida Gulf Coast University','Eagle',17,15,5),(11,'Florida Atlantic University','Owl',35,4,1),(12,'Jacksonville University','Dolphin',13,16,8),(13,'Stetson University','Hatter',17,14,4);
 /*!40000 ALTER TABLE `team` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-10 16:05:10
+-- Dump completed on 2023-04-22 13:49:23

@@ -32,6 +32,7 @@
                 <th><a href="/average?type=Weight&id={{ data[0][3] }}">Weight</a></th>
                 <th><a href="/average?type=Year_In_School&id={{ data[0][3] }}">Year In School</a></th>
                 <th>Action</th>
+                <th>Action(ADMIN ONLY)</th>
             </tr>
         </thead>
         <tbody>
@@ -43,6 +44,8 @@
                     <td>{{ row[5] }}</td>
                     <td>{{ row[6] }}</td>
                     <td><a href="/moreinfo?id={{ row[0] }}">More Info</a><br><a href="/addToTeam?id={{ row[0] }}"> Add To Custom Team</a></td>
+                    <td><a href="/removePlayer?id={{ row[0] }}">Remove Player</a></td>
+
 
                 </tr>
             {% endfor %}
